@@ -42,7 +42,7 @@ a:hover {
     float: left;
     font-weight: bold;
     color: #FFA500;
-    margin-left: 20px;
+    padding-left: 1em;
 }
 .menu .links li {
     display: inline;
@@ -50,6 +50,21 @@ a:hover {
 }
 .content {
     margin: 20px 0;
+}
+.content .article-list {
+    list-style-type: none;
+    margin-left: 10em;
+}
+.content .article-list li {
+    margin-top: 0.5em;
+    background: url("/assets/icons/circle.svg") no-repeat;
+    background-position: left center;
+    padding-left: 25px;
+}
+.footer {
+    margin: 5px;
+    font-size: .7em;
+    font-style: italic;
 }
 hr {
     margin-top: 10px;
@@ -64,6 +79,9 @@ hr {
         margin: 0;
         margin-bottom: 30px;
     }
+    .content .article-list {
+    margin-left: 1em;
+}
 }
 @media only screen and (max-width:500px) {
     .menu .title {

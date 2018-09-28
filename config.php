@@ -2,10 +2,15 @@
 
 return (object) array(
 	"site_name" => "Fiblog",
-	"site_github" => "",
-	"site_twitter" => "",
-	"site_facebook" => "",
-	"site_linkedin" => ""
+	"site_description" => "Dead simple flat-file blogging.",
+	"site_author" => "EXLER",
+
+	// Write only the username part of your link
+	// Leave blank if you don't want the icon to show up
+	"social_github" => "exler",
+	"social_twitter" => "",
+	"social_facebook" => "",
+	"social_linkedin" => ""
 );
 
 ?>

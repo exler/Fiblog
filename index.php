@@ -18,18 +18,12 @@ function getPost($postPath) {
 <html lang="en">
     <head>
         <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-                <title>
-                    <?php echo $config->site_name ?>
-                </title>
-                <meta content="" name="description">
-                    <link href="/assets/main.css" rel="stylesheet">
-                        <link href="/assets/favicon.png" rel="icon">
-                        </link>
-                    </link>
-                </meta>
-            </meta>
-        </meta>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>
+            <?php echo $config->site_name ?>
+        </title>
+        <meta content="<?php echo $config->site_description ?>" name="description">
+        <link rel="stylesheet" href="/assets/main.css">
     </head>
     <body>
         <div class="menu">
@@ -37,11 +31,11 @@ function getPost($postPath) {
                 <a href="/"><?php echo $config->site_name ?></a>
             </div>
             <ul class="links">
-                <li><a href="https://github.com/exler/Fiblog"><img src="/assets/icons/github.svg" width="18"></a></li>
-                <!-- <li><a href="#"><img src="/assets/icons/linkedin.svg" width="18"></a></li> -->
-                <!-- <li><a href="#"><img src="/assets/icons/facebook.svg" width="18"></a></li> -->
-                <!-- <li><a href="#"><img src="/assets/icons/twitter.svg" width="18"></a></li> -->
-            <ul>
+            	<?php if($config->social_github) echo "<li><a href='https://github.com/" . $config->social_github . "'><img src='/assets/icons/github.svg' width='18'></a></li>" ?>
+            	<?php if($config->social_linkedin) echo "<li><a href='https://www.linkedin.com/in/" . $config->social_linkedin . "'><img src='/assets/icons/linkedin.svg' width='18'></a></li>" ?>
+            	<?php if($config->social_facebook) echo "<li><a href='https://www.facebook.com/" . $config->social_facebook . "'><img src='/assets/icons/facebook.svg' width='18'></a></li>" ?>
+            	<?php if($config->social_twitter) echo "<li><a href='https://twitter.com/" . $config->social_twitter . "'><img src='/assets/icons/twitter.svg' width='18'></a></li>" ?>
+            </ul>
         </div>
         <hr class="big">
         <div class="content">
@@ -71,6 +65,7 @@ function getPost($postPath) {
         </div>
         <hr class="big">
         <div class="footer">
+        	<?php echo "&copy; " . date("Y") . " " . $config->site_author ?> 
         </div>
     </body>
 </html>
