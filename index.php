@@ -2,7 +2,7 @@
 
 define("CONTENT_DIR", __DIR__ . "/posts/");
 
-require_once("lib/Parsedown-1.6.0.php");	
+require_once("lib/Parsedown-1.7.1.php");	
 $config = require_once("config.php");
 
 $posts = array_diff(scandir(CONTENT_DIR), array(".", ".."));
@@ -42,7 +42,7 @@ function getPost($postPath) {
 			<div class="article">
 				<?php
 
-				if($_GET["post"]) {
+				if(isset($_GET["post"])) {
 					echo getPost(CONTENT_DIR . $_GET["post"] . ".md");
 				}
 
@@ -51,7 +51,7 @@ function getPost($postPath) {
         	<ul class="article-list">
         		<?php 
 
-        		if(!$_GET["post"]) {
+        		if(!isset($_GET["post"])) {
         			foreach($posts as $post) {
         				$post = substr($post, 0, -3);
         				$postTitle = str_replace("-", " ", $post);
