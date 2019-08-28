@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap');
 
 * {
     margin: 0;
     padding: 0;
 }
 body {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 18px;
     color: #222;
     padding: 10px;
@@ -31,6 +31,23 @@ a {
 a:hover {
     text-decoration: underline;
 }
+code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #FFA500;
+    color: #666;
+    page-break-inside: avoid;
+    margin-bottom: 1.6em;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+img {
+    max-width: 100%;
+}
 .menu {
     font-size: 22px;
     text-align: right;
@@ -40,6 +57,7 @@ a:hover {
 }
 .menu .title a {
     float: left;
+    font-family: 'Roboto Mono', Helvetica, sans-serif;
     font-weight: bold;
     color: #FFA500;
     padding-left: 1em;
@@ -50,6 +68,9 @@ a:hover {
 }
 .content {
     margin: 20px 0;
+}
+.content .article {
+    padding: 0 32px;
 }
 .content .article-list {
     list-style-type: none;
