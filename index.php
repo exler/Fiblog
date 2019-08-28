@@ -2,7 +2,7 @@
 
 define("CONTENT_DIR", __DIR__ . "/posts/");
 
-require_once("lib/Parsedown-1.7.1.php");	
+require_once("lib/Parsedown-1.7.3.php");	
 $config = require_once("config.php");
 
 $posts = array_diff(scandir(CONTENT_DIR), array(".", ".."));
