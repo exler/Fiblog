@@ -1,0 +1,12 @@
+{
+    "name": "exler/fiblog",
+    "description": "Perfectly simple flat-file blogging for busy people.",
+    "type": "project",
+    "homepage": "https://github.com/exler/Fiblog",
+    "readme": "https://github.com/EXLER/Fiblog/blob/master/README.md",
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.7.1"
+    },
+    "license": "MIT"
+}
