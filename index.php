@@ -2,14 +2,14 @@
 
 define("CONTENT_DIR", __DIR__ . "/posts/");
 
-require_once("lib/Parsedown-1.7.3.php");	
+require_once("vendor/autoload.php");	
 $config = require_once("config.php");
 
-$posts = array_diff(scandir(CONTENT_DIR), array(".", ".."));
+$posts = array_diff(scandir(CONTENT_DIR), array(".", "..", ".gitkeep"));
 
 function getPost($postPath) {
 	$markdownString = file_get_contents($postPath);
-	return Parsedown::instance()->text($markdownString);
+	return ParsedownExtra::instance()->text($markdownString);
 }
 
 ?>

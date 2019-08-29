@@ -15,10 +15,28 @@ body {
     margin: 20px auto;
 }
 h1 {
-    font-size: 24px;
-    margin-bottom: 0;
+    font-size: 28px;
     margin: 10px 0;
-    text-align: left;
+}
+h2 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+h4 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+h5 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+h6 {
+    font-size: 18px;
+    margin: 10px 0;
 }
 ul {
     line-height: 25px;
@@ -47,6 +65,34 @@ code {
 }
 img {
     max-width: 100%;
+}
+table, th, td {
+    border: 1px solid #FFA500;
+}
+th, td {
+    padding: 6px;
+}
+blockquote {
+    background: #EDEDED;
+    border-left: 8px solid #FFA500;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    color: #666;
+    font-style: italic;
+    margin: 16px auto;
+    padding: 1.2em 30px 1.2em 30px;
+    position: relative;
+    width: 60%;
+    z-index: 0;
+    overflow: hidden;
+}
+blockquote p::before {
+    color: #DDD;
+    content: "\201C";
+    font-size: 100em;
+    line-height: 0.65em;
+    right: .1em;
+    position: absolute;
+    z-index: -1;
 }
 .menu {
     font-size: 22px;
