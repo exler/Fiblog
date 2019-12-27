@@ -1,4 +1,4 @@
-<h4 align="center">Dead simple flat-file blogging for busy people.</h4>
+<h4 align="center">Dead simple flat-file blog generator for busy people.</h4>
 
 <p align="center">
 	<img width="68" src="assets/logo.png">
@@ -13,23 +13,20 @@
 
 ## Requirements
 
-* PHP >= 7.0 (untested on older versions)
+* PHP >= 5.6
 * Composer
 
 ## Installation
 
 ```bash
 # Download the project files
-$ git clone https://github.com/exler/Fiblog .
+$ git clone https://github.com/exler/Fiblog
 
 # Install dependencies
 $ composer install
-
-# Fill the configuration file with your blog details
-$ nano config.php
 ```
 
-If you want to modify Fiblog use the built-in PHP development server: 
+If you want to develop Fiblog use the built-in PHP development server: 
 
 ```bash
 $ php -S localhost:8000
@@ -37,12 +34,24 @@ $ php -S localhost:8000
 
 ## Usage
 
-Place files inside the `posts` directory. Fiblog currently supports Markdown and Markdown Extra.  
-Filenames can only contain lowercase & uppercase letters separated by dashes.
+* Open the `config.php` file and fill out the necessary fields.
+* Place your `.md` files inside the `posts` directory. Fiblog supports Markdown and Markdown Extra.
+* All files must contain the following markup:
+```
+---
+title: Hello World
+author: EXLER
+date: 01-01-1970
+tags: hello, world
+---
+```
+Whitepaces after colons and commas are important.  
+Use any date format you want (parsed as a normal string).
+
 
 
 ## License
 
-Copyright (c) 2018-2019 by ***Kamil Marut***.
+Copyright (c) 2018-2020 by ***Kamil Marut***.
 
 *Fiblog* is under the terms of the [MIT License](https://www.tldrlegal.com/l/mit), following all clarifications stated in the [license file](LICENSE).
