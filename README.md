@@ -1,7 +1,7 @@
 <h4 align="center">Dead simple flat-file blogging for busy people.</h4>
 
 <p align="center">
-	<img width="200" src="banner.png">
+	<img width="68" src="assets/logo.png">
 </p>
 
 <p align="center">
