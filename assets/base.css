@@ -218,6 +218,9 @@ body {
     text-align: left;
   }
 }
+.post-content {
+  margin-top: 3rem;
+}
 #footer {
   padding-top: 10px;
   padding-bottom: 10px;
