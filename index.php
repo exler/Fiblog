@@ -55,13 +55,14 @@ function getPost($postName) {
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>
-        <?php echo $config->site_name ?>
-    </title>
+    <title><?php echo $config->site_name ?></title>
     <meta content="<?php echo $config->site_short_description ?>" name="description">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/base.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.png">
 </head>
 
 <body>
@@ -71,11 +72,19 @@ function getPost($postName) {
             <a href="/">
                 <img id="logo" alt="<?php echo $config->site_name ?>" src="assets/logo.png">
 
-                <?php if(!isset($_GET["post"])) : ?> 
+            <?php if(!isset($_GET["post"])) : ?>
                 <div id="title">
                     <h1><?php echo $config->site_name ?></h1>
                 </div>
             </a>
+
+            <div class="social">
+                <?php if($config->social_github) echo "<li><a target='_blank' href='https://github.com/" . $config->social_github . "'><img src='/assets/icons/github.svg' width='18'></a></li>" ?>
+                <?php if($config->social_linkedin) echo "<li><a target='_blank' href='https://www.linkedin.com/in/" . $config->social_linkedin . "'><img src='/assets/icons/linkedin.svg' width='18'></a></li>" ?>
+                <?php if($config->social_facebook) echo "<li><a target='_blank' href='https://www.facebook.com/" . $config->social_facebook . "'><img src='/assets/icons/facebook.svg' width='18'></a></li>" ?>
+                <?php if($config->social_twitter) echo "<li><a target='_blank' href='https://twitter.com/" . $config->social_twitter . "'><img src='/assets/icons/twitter.svg' width='18'></a></li>" ?>
+            </div>
+            
             <?php else: $postDetails = getPostDetails($_GET["post"] . ".md"); ?>
                 <div id="title">
                     <h1><?php echo $postDetails[0]; ?></h1>
@@ -83,7 +92,7 @@ function getPost($postName) {
             </a>
 
             <div id="post-details">
-                <?php 
+                <?php
                     echo "Written by: " . $postDetails[2] . " @ ";
                     echo $postDetails[1] . " | ";
                     foreach($postDetails[3] as $tag) { echo "#" . $tag . " ";};
@@ -94,7 +103,6 @@ function getPost($postName) {
 
         <?php if(!isset($_GET["post"])) : ?>
             <section id="about">
-                <h2><?php echo $config->site_short_description ?></h2>
                 <p><?php echo $config->site_long_description ?></p>
             </section>
 
@@ -147,21 +155,8 @@ function getPost($postName) {
     </div>
 
     <footer id="footer">
-        <div class="footer-right">
-            <?php if($config->social_github) echo "<li><a target='_blank' href='https://github.com/" . $config->social_github . "'><img src='/assets/icons/github.svg' width='18'></a></li>" ?>
-            <?php if($config->social_linkedin) echo "<li><a target='_blank' href='https://www.linkedin.com/in/" . $config->social_linkedin . "'><img src='/assets/icons/linkedin.svg' width='18'></a></li>" ?>
-            <?php if($config->social_facebook) echo "<li><a target='_blank' href='https://www.facebook.com/" . $config->social_facebook . "'><img src='/assets/icons/facebook.svg' width='18'></a></li>" ?>
-            <?php if($config->social_twitter) echo "<li><a target='_blank' href='https://twitter.com/" . $config->social_twitter . "'><img src='/assets/icons/twitter.svg' width='18'></a></li>" ?>
-        </div>
-
         <div class="footer-center">
             <?php echo $config->site_name . " - " . $config->site_short_description ?>
-        </div>
-
-        <div class="footer-left">
-            <a title="Site generated using Fiblog" href="https://github.com/EXLER/Fiblog">
-                <img src="/assets/icons/code.svg" width="18">
-            </a>
         </div>
     </footer>
 </html>
