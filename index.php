@@ -7,7 +7,11 @@ $config = require_once("config.php");
 
 $posts = array_diff(scandir(CONTENT_DIR), array(".", "..", ".gitkeep"));
 
-function getPostDetails($postName) {
+function getPostDetails($posts, $postName) {
+    if (!in_array($postName, $posts)) {
+        die("No such post in the database!");
+    }
+
     $title = "";
     $date = "";
     $author = "";
@@ -86,7 +90,7 @@ function getPost($postName) {
                 <?php if($config->social_email) echo "<li><a target='_blank' href='mailto:" . $config->social_email . "'><img src='/assets/icons/email.svg' width='18'></a></li>" ?>
             </div>
             
-            <?php else: $postDetails = getPostDetails($_GET["post"] . ".md"); ?>
+            <?php else: $postDetails = getPostDetails($posts, $_GET["post"] . ".md"); ?>
                 <div id="title">
                     <h1><?php echo $postDetails[0]; ?></h1>
                 </div>
@@ -111,7 +115,7 @@ function getPost($postName) {
                 <h1>Posts</h1>
                 <ul class="post-list">
                     <?php foreach($posts as $post) : ?>
-                        <?php $postDetails = getPostDetails($post) ?>
+                        <?php $postDetails = getPostDetails($posts, $post) ?>
                         <li class="post-item">
                             <div class="meta">
                                 <?php echo $postDetails[1] ?>
