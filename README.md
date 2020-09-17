@@ -1,4 +1,4 @@
-<h4 align="center">Dead simple flat-file blog generator for busy people.</h4>
+<h4 align="center">Perfectly simple flat-file, markdown-based blog engine for busy people</h4>
 
 <p align="center">
 	<img width="68" src="assets/logo.png">
