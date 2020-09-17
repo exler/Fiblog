@@ -15,7 +15,8 @@ return (object) [
 	"social_github" => "",
 	"social_twitter" => "",
 	"social_facebook" => "",
-	"social_linkedin" => ""
+	"social_linkedin" => "",
+	"social_email" => ""
 ];
 
 ?>

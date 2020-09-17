@@ -83,6 +83,7 @@ function getPost($postName) {
                 <?php if($config->social_linkedin) echo "<li><a target='_blank' href='https://www.linkedin.com/in/" . $config->social_linkedin . "'><img src='/assets/icons/linkedin.svg' width='18'></a></li>" ?>
                 <?php if($config->social_facebook) echo "<li><a target='_blank' href='https://www.facebook.com/" . $config->social_facebook . "'><img src='/assets/icons/facebook.svg' width='18'></a></li>" ?>
                 <?php if($config->social_twitter) echo "<li><a target='_blank' href='https://twitter.com/" . $config->social_twitter . "'><img src='/assets/icons/twitter.svg' width='18'></a></li>" ?>
+                <?php if($config->social_email) echo "<li><a target='_blank' href='mailto:" . $config->social_email . "'><img src='/assets/icons/email.svg' width='18'></a></li>" ?>
             </div>
             
             <?php else: $postDetails = getPostDetails($_GET["post"] . ".md"); ?>
